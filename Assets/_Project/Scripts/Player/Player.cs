@@ -35,7 +35,5 @@ public class Player : MonoBehaviour
             _animator.Jump();
             _mover.Jump();
         }
-
-
     }
 }

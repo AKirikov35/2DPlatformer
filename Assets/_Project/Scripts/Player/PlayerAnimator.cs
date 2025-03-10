@@ -2,9 +2,6 @@
 
 public class PlayerAnimator : MonoBehaviour
 {
-    [SerializeField] private PlayerMover _mover;
-    [SerializeField] private GroundDetector _groundDetector;
-
     private Animator _animator;
 
     private void Awake()

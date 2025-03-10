@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
 
-public class PlayerMover : MonoBehaviour, IMoveable, IJumping
+[RequireComponent(typeof(Rigidbody2D), typeof(CapsuleCollider2D))]
+public class PlayerMover : MonoBehaviour
 {
     private const float SpeedThreshold = 0.5f;
 
-    [SerializeField, Range(4f, 10f)] private float _moveSpeed = 6f;
-    [SerializeField, Range(5f, 12f)] private float _jumpForce = 8f;
+    [SerializeField, Range(1f, 10f)] private float _moveSpeed = 4f;
+    [SerializeField, Range(3f, 12f)] private float _jumpForce = 7f;
 
     public float MoveSpeed { get; private set; } = 0f;
 

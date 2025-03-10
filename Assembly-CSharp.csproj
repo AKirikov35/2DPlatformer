@@ -63,15 +63,17 @@
     <Compile Include="Assets\_Project\Scripts\Rotator.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerMover.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaAnimator.cs" />
+    <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaAnimatorData.cs" />
     <Compile Include="Assets\_Project\Scripts\Collectibles\Coin\CoinSpawner.cs" />
-    <Compile Include="Assets\_Project\Scripts\Interfaces\IMoveable.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\CoinDetector.cs" />
     <Compile Include="Assets\_Project\Scripts\GroundDetector.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerAnimatorData.cs" />
+    <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\Ninja.cs" />
+    <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaMover.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\InputReader.cs" />
     <Compile Include="Assets\_Project\Scripts\Ground.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\CameraFollow.cs" />
-    <Compile Include="Assets\_Project\Scripts\Interfaces\IJumping.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
