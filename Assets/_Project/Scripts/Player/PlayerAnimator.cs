@@ -23,4 +23,14 @@ public class PlayerAnimator : MonoBehaviour
     {
         _animator.SetBool(PlayerAnimatorData.IsJumping, false);
     }
+
+    public void Damaged()
+    {
+        _animator.SetBool(PlayerAnimatorData.IsDamaged, true);
+    }
+
+    public void Died()
+    {
+        _animator.SetBool(PlayerAnimatorData.IsDied, true);
+    }
 }

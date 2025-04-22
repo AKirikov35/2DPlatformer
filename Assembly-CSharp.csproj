@@ -63,10 +63,14 @@
     <Compile Include="Assets\_Project\Scripts\Rotator.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerMover.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\_Project\Scripts\Health.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaAnimator.cs" />
+    <Compile Include="Assets\_Project\Scripts\Collectibles\FirstAidKit.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaAnimatorData.cs" />
     <Compile Include="Assets\_Project\Scripts\Collectibles\Coin\CoinSpawner.cs" />
+    <Compile Include="Assets\_Project\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\CoinDetector.cs" />
+    <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaHealth.cs" />
     <Compile Include="Assets\_Project\Scripts\GroundDetector.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerAnimatorData.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\Ninja.cs" />

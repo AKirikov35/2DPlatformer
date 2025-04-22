@@ -1,10 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 [RequireComponent(typeof(CircleCollider2D))]
-public class Coin : MonoBehaviour
+public class FirstAidKit : MonoBehaviour
 {
     private CircleCollider2D _collider;
-    private int _amountHealthRestored = 20;  //???
 
     private void Awake()
     {
