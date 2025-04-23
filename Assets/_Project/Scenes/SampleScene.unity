@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428794a5237ed4a40a1554d1f24c2b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinDetector: {fileID: 308310620}
+  _detector: {fileID: 308310620}
   _coin: {fileID: 2946422859474776194, guid: aba730b831c52db4981c660bad21aaaf, type: 3}
   _spawnPosition:
   - {fileID: 1587032687}

@@ -4,7 +4,8 @@
 public class Coin : MonoBehaviour
 {
     private CircleCollider2D _collider;
-    private int _amountHealthRestored = 20;  //???
+
+    public int Cost { get; private set; } = 1;
 
     private void Awake()
     {

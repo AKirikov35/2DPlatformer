@@ -4,10 +4,23 @@ public class PlayerHealth : Health
 {
     public event Action PlayerDied;
 
+    private CollectiblesDetector _detector;
+
     protected override void Awake()
     {
+        _detector = GetComponent<CollectiblesDetector>();
         _maxHealth = 100;
         base.Awake();
+    }
+
+    private void OnEnable()
+    {
+        _detector.FirstAidKitDetected += TakeHeal;
+    }
+
+    private void OnDisable()
+    {
+        _detector.FirstAidKitDetected -= TakeHeal;
     }
 
     public override void TakeDamage(int damage)
@@ -18,9 +31,9 @@ public class PlayerHealth : Health
             PlayerDied?.Invoke();
     }
 
-    public void TakeHeal(int heal)
+    public void TakeHeal(FirstAidKit firstAidKit)
     {
-        CurrentHealth += heal;
+        CurrentHealth += firstAidKit.AmountHealthReceived;
 
         if (CurrentHealth > _maxHealth)
             CurrentHealth = _maxHealth;

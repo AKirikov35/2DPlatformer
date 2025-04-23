@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private InputReader _inputReader;
     private PlayerMover _mover;
     private PlayerHealth _health;
+    private PlayerWallet _wallet;
 
     private void Awake()
     {
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
         _inputReader = GetComponent<InputReader>();
         _mover = GetComponent<PlayerMover>();
         _health = GetComponent<PlayerHealth>();
+        _wallet = GetComponent<PlayerWallet>();
     }
 
     private void FixedUpdate()
