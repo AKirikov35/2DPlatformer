@@ -3,6 +3,7 @@ using System;
 public class NinjaHealth : Health
 {
     public event Action NinjaDied;
+    public event Action NinjaHurt;
 
     protected override void Awake()
     {
@@ -14,7 +15,9 @@ public class NinjaHealth : Health
     {
         base.TakeDamage(damage);
 
-        if (CurrentHealth >= 0)
+        if (CurrentHealth <= 0)
             NinjaDied?.Invoke();
+        else
+            NinjaHurt?.Invoke();
     }
 }

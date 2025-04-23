@@ -28,8 +28,8 @@ public class FirstAidKitSpawner : MonoBehaviour
             Instantiate(_firstAidKit, _spawnPosition[i].transform.position, Quaternion.identity);
     }
 
-    private void Destroy(Coin coin)
+    private void Destroy(FirstAidKit firstAidKit)
     {
-        Destroy(coin.gameObject);
+        Destroy(firstAidKit.gameObject);
     }
 }

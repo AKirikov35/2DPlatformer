@@ -62,6 +62,7 @@
     <Compile Include="Assets\_Project\Scripts\Player\PlayerAnimator.cs" />
     <Compile Include="Assets\_Project\Scripts\Rotator.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerMover.cs" />
+    <Compile Include="Assets\_Project\Scripts\Player\PlayerWeaponDetector.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\Player.cs" />
     <Compile Include="Assets\_Project\Scripts\Health.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaAnimator.cs" />
@@ -71,6 +72,8 @@
     <Compile Include="Assets\_Project\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\CollectiblesDetector.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaHealth.cs" />
+    <Compile Include="Assets\_Project\Scripts\Player\PlayerWeapon.cs" />
+    <Compile Include="Assets\_Project\Scripts\IDamageable.cs" />
     <Compile Include="Assets\_Project\Scripts\GroundDetector.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerAnimatorData.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\Ninja.cs" />

@@ -23,16 +23,24 @@ public class Ninja : MonoBehaviour
     private void OnEnable()
     {
         _health.NinjaDied += Died;
+        _health.NinjaHurt += Hurt;
     }
 
     private void OnDisable()
     {
         _health.NinjaDied -= Died;
+        _health.NinjaHurt -= Hurt;
     }
 
     private void Died()
     {
+        _animator.Died();
         _mover.gameObject.SetActive(false);
         gameObject.SetActive(false);
+    }
+
+    private void Hurt()
+    {
+        _animator.Hurt();
     }
 }

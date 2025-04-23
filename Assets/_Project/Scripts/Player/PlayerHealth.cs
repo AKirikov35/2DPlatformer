@@ -3,6 +3,7 @@ using System;
 public class PlayerHealth : Health
 {
     public event Action PlayerDied;
+    public event Action PlayerHurt;
 
     private CollectiblesDetector _detector;
 
@@ -27,13 +28,15 @@ public class PlayerHealth : Health
     {
         base.TakeDamage(damage);
 
-        if (CurrentHealth >= 0)
+        if (CurrentHealth <= 0)
             PlayerDied?.Invoke();
+        else
+            PlayerHurt?.Invoke();
     }
 
     public void TakeHeal(FirstAidKit firstAidKit)
     {
-        CurrentHealth += firstAidKit.AmountHealthReceived;
+        CurrentHealth += firstAidKit.AmountHealthRestored;
 
         if (CurrentHealth > _maxHealth)
             CurrentHealth = _maxHealth;

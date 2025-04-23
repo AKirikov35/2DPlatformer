@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private PlayerMover _mover;
     private PlayerHealth _health;
     private PlayerWallet _wallet;
+    private PlayerWeaponDetector _weaponDetector;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
         _mover = GetComponent<PlayerMover>();
         _health = GetComponent<PlayerHealth>();
         _wallet = GetComponent<PlayerWallet>();
+        _weaponDetector = GetComponent<PlayerWeaponDetector>();
     }
 
     private void FixedUpdate()
@@ -39,16 +41,24 @@ public class Player : MonoBehaviour
             _animator.Jump();
             _mover.Jump();
         }
+
+        if (_inputReader.GetIsAttack())
+        {
+            _animator.Attack();
+            _weaponDetector.Hit();
+        }
     }
 
     private void OnEnable()
     {
         _health.PlayerDied += Died;
+        _health.PlayerHurt += Hurt;
     }
 
     private void OnDisable()
     {
         _health.PlayerDied -= Died;
+        _health.PlayerHurt += Hurt;
     }
 
     private void Died()
@@ -56,5 +66,10 @@ public class Player : MonoBehaviour
         _inputReader.gameObject.SetActive(false);
         _mover.gameObject.SetActive(false);
         gameObject.SetActive(false);
+    }
+
+    private void Hurt()
+    {
+        _animator.Hurt();
     }
 }

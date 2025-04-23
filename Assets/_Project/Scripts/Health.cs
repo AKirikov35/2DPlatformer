@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Health : MonoBehaviour
+public abstract class Health : MonoBehaviour, IDamageable
 {
     protected int _maxHealth;
 
