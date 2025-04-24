@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2374055419072628002}
   - component: {fileID: -449199000159359406}
   m_Layer: 0
-  m_Name: FirstAidKit_Sushi
+  m_Name: AidKit_Sushi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

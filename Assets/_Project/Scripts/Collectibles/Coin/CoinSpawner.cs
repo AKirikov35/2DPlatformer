@@ -1,15 +1,15 @@
-using UnityEngine;
+using System;
+using System.Collections.Generic;
 
-public class CoinSpawner : MonoBehaviour
+public class CoinSpawner : Spawner
 {
-    [SerializeField] private CollectiblesDetector _detector;
-    [SerializeField] private Coin _coin;
-    [SerializeField] private Transform[] _spawnPosition;
+    public event Action<int> CoinsRewarded;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (_coin != null && _spawnPosition != null && _spawnPosition.Length > 0)
-            Spawn();
+        _collectibles = new Dictionary<Collectible, int>();
+        _value = 1;
+        base.Awake();
     }
 
     private void OnEnable()
@@ -22,14 +22,14 @@ public class CoinSpawner : MonoBehaviour
         _detector.CoinDetected -= Destroy;
     }
 
-    private void Spawn()
+    protected override void Spawn()
     {
-        for (int i = 0; i < _spawnPosition.Length; i++)
-            Instantiate(_coin, _spawnPosition[i].transform.position, Quaternion.identity);
+        base.Spawn();
     }
 
-    private void Destroy(Coin coin)
+    protected void Destroy(Coin coin)
     {
-        Destroy(coin.gameObject);
+        CoinsRewarded?.Invoke(_collectibles[coin]);
+        base.Destroy(coin);
     }
 }

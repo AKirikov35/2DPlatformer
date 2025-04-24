@@ -2,28 +2,27 @@ using UnityEngine;
 
 public class PlayerWallet : MonoBehaviour
 {
-    private CollectiblesDetector _detector;
+    [SerializeField] private CoinSpawner _coin;
 
     public int Gold { get; private set; }
 
     private void Awake()
     {
-        _detector = GetComponent<CollectiblesDetector>();
         Gold = 0;
     }
 
     private void OnEnable()
     {
-        _detector.CoinDetected += GainGold;
+        _coin.CoinsRewarded += GainGold;
     }
 
     private void OnDisable()
     {
-        _detector.CoinDetected += GainGold;
+        _coin.CoinsRewarded += GainGold;
     }
 
-    public void GainGold(Coin coin)
+    public void GainGold(int value)
     {
-        Gold += coin.Cost;
+        Gold += value;
     }
 }

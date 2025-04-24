@@ -1,27 +1,27 @@
 using System;
+using UnityEngine;
 
 public class PlayerHealth : Health
 {
+    [SerializeField] private AidKitSpawner _aidKit;
+
     public event Action PlayerDied;
     public event Action PlayerHurt;
 
-    private CollectiblesDetector _detector;
-
     protected override void Awake()
     {
-        _detector = GetComponent<CollectiblesDetector>();
         _maxHealth = 100;
         base.Awake();
     }
 
     private void OnEnable()
     {
-        _detector.FirstAidKitDetected += TakeHeal;
+        _aidKit.HealingReceived += TakeHeal;
     }
 
     private void OnDisable()
     {
-        _detector.FirstAidKitDetected -= TakeHeal;
+        _aidKit.HealingReceived -= TakeHeal;
     }
 
     public override void TakeDamage(int damage)
@@ -34,9 +34,9 @@ public class PlayerHealth : Health
             PlayerHurt?.Invoke();
     }
 
-    public void TakeHeal(FirstAidKit firstAidKit)
+    public void TakeHeal(int value)
     {
-        CurrentHealth += firstAidKit.AmountHealthRestored;
+        CurrentHealth += value;
 
         if (CurrentHealth > _maxHealth)
             CurrentHealth = _maxHealth;
