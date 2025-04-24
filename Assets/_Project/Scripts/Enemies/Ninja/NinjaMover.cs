@@ -21,10 +21,9 @@ public class NinjaMover : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _rotator = GetComponent<Rotator>();
-        StartPatrol();
     }
 
-    public void Move(float direction)
+    private void Move(float direction)
     {
         Vector2 movement = new Vector2(direction, 0) * _moveSpeed * Time.fixedDeltaTime;
         _rigidbody.MovePosition(_rigidbody.position + movement);
@@ -45,12 +44,20 @@ public class NinjaMover : MonoBehaviour
         return direction.x;
     }
 
-    private void StartPatrol()
+    public void StartPatrol()
     {
         if (_patrolCoroutine != null)
             StopCoroutine(_patrolCoroutine);
 
         _patrolCoroutine = StartCoroutine(Patrol());
+    }
+
+    public void StartPursue(Vector3 direction)
+    {
+        if (_patrolCoroutine != null)
+            StopCoroutine(_patrolCoroutine);
+
+        Move(direction.x);
     }
 
     private IEnumerator Patrol()

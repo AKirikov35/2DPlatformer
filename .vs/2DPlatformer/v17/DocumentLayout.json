@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Programs\\GitHub\\2DPlatformer\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|d:\\programs\\github\\2dplatformer\\assets\\_project\\scripts\\enemies\\ninja\\enemydetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\ninja\\enemydetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\enemies\\ninja\\ninjamover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\ninja\\ninjamover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\enemies\\ninja\\ninja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\ninja\\ninja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\enemies\\ninja\\ninjaanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\ninja\\ninjaanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\enemies\\ninja\\ninjaanimatordata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\ninja\\ninjaanimatordata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NinjaAnimatorData.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimatorData.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimatorData.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimatorData.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimatorData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:37:25.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NinjaAnimator.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimator.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimator.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimator.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:37:40.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ninja.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\Ninja.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\Ninja.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\Ninja.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\Ninja.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:54:14.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NinjaMover.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaMover.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaMover.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaMover.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaMover.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAuwDgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T07:02:51.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EnemyDetector.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\EnemyDetector.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\EnemyDetector.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\EnemyDetector.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\EnemyDetector.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T07:31:04.498Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

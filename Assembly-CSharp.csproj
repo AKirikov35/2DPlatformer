@@ -84,6 +84,7 @@
     <Compile Include="Assets\_Project\Scripts\Player\InputReader.cs" />
     <Compile Include="Assets\_Project\Scripts\Ground.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\CameraFollow.cs" />
+    <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\EnemyDetector.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerWallet.cs" />
   </ItemGroup>
   <ItemGroup>
