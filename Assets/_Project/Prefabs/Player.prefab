@@ -42,7 +42,7 @@ Transform:
   m_Children:
   - {fileID: 2240970819610796814}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &2685317837650318640
 CapsuleCollider2D:
@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa64556d90c7c1547b87bf24db6f23d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _aidKit: {fileID: 0}
 --- !u!114 &2015175966985902388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff633cf1483d9534689f8aee23d1b19c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coin: {fileID: 0}
 --- !u!114 &8995806140032517613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6cef57792a8444689067fc0a5c03e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hitLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &5574121956170376102
 GameObject:
   m_ObjectHideFlags: 0

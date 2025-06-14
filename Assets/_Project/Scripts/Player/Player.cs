@@ -61,15 +61,15 @@ public class Player : MonoBehaviour
         _health.PlayerHurt += Hurt;
     }
 
+    private void Hurt()
+    {
+        _animator.Hurt();
+    }
+
     private void Died()
     {
         _inputReader.gameObject.SetActive(false);
         _mover.gameObject.SetActive(false);
         gameObject.SetActive(false);
-    }
-
-    private void Hurt()
-    {
-        _animator.Hurt();
     }
 }

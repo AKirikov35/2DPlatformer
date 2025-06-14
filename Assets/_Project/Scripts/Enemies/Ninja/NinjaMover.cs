@@ -1,21 +1,24 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(CapsuleCollider2D))]
 public class NinjaMover : MonoBehaviour
 {
-    private const float WaitingTimeAtCheckpoint = 2f;
-
-    [SerializeField, Range(1f, 10f)] private float _moveSpeed = 3f;
-    [SerializeField] private Transform[] _routeWaypoints;
+    [SerializeField] private Transform[] _patrolWaypoints;
+    [SerializeField] private float _patrolSpeed = 3f;
+    [SerializeField] private float _pursuitSpeed = 4.5f;
+    [SerializeField] private float _waypointThreshold = 0.5f;
+    [SerializeField] private float _pursuitStopDistance = 0.5f;
 
     private Rigidbody2D _rigidbody;
     private Rotator _rotator;
-
-    private int _currentWaypoint = 0;
-    private Coroutine _patrolCoroutine;
+    private int _currentWaypointIndex = 0;
+    private Coroutine _movementCoroutine;
+    private bool _isWaiting = false;
 
     public float CurrentDirection { get; private set; }
+    public bool IsMoving { get; private set; }
+    public bool IsPursuing { get; private set; }
 
     private void Awake()
     {
@@ -23,64 +26,94 @@ public class NinjaMover : MonoBehaviour
         _rotator = GetComponent<Rotator>();
     }
 
-    private void Move(float direction)
-    {
-        Vector2 movement = new Vector2(direction, 0) * _moveSpeed * Time.fixedDeltaTime;
-        _rigidbody.MovePosition(_rigidbody.position + movement);
-    }
-
-    private float SetWaypoint()
-    {
-        if (_routeWaypoints.Length == 0)
-            return 0f;
-
-        Transform target = _routeWaypoints[_currentWaypoint];
-        float minDistanceToTarget = 0.2f;
-
-        if ((transform.position - target.position).sqrMagnitude < minDistanceToTarget)
-            return 0f;
-
-        Vector2 direction = (target.position - transform.position).normalized;
-        return direction.x;
-    }
-
     public void StartPatrol()
     {
-        if (_patrolCoroutine != null)
-            StopCoroutine(_patrolCoroutine);
-
-        _patrolCoroutine = StartCoroutine(Patrol());
+        StopAllMovement();
+        IsPursuing = false;
+        _movementCoroutine = StartCoroutine(PatrolRoutine());
     }
 
-    public void StartPursue(Vector3 direction)
+    public void StartPursue(Vector3 targetPosition)
     {
-        if (_patrolCoroutine != null)
-            StopCoroutine(_patrolCoroutine);
-
-        Move(direction.x);
+        StopAllMovement();
+        IsPursuing = true;
+        _movementCoroutine = StartCoroutine(PursueRoutine(targetPosition));
     }
 
-    private IEnumerator Patrol()
+    public void StopAllMovement()
+    {
+        if (_movementCoroutine != null)
+        {
+            StopCoroutine(_movementCoroutine);
+        }
+        _rigidbody.velocity = Vector2.zero;
+        CurrentDirection = 0f;
+        IsMoving = false;
+        _isWaiting = false;
+    }
+
+    private IEnumerator PatrolRoutine()
     {
         while (true)
         {
-            CurrentDirection = SetWaypoint();
+            if (_patrolWaypoints.Length == 0) yield break;
 
-            if (CurrentDirection == 0f)
+            if (_isWaiting)
             {
-                yield return new WaitForSeconds(WaitingTimeAtCheckpoint);
-                _currentWaypoint++;
-
-                if (_currentWaypoint >= _routeWaypoints.Length)
-                    _currentWaypoint = 0;
+                _currentWaypointIndex = ++_currentWaypointIndex % _patrolWaypoints.Length;
+                _isWaiting = false;
+                continue;
             }
-            else
+
+            Vector2 targetPosition = _patrolWaypoints[_currentWaypointIndex].position;
+            Vector2 direction = (targetPosition - _rigidbody.position).normalized;
+
+            UpdateMovement(direction, _patrolSpeed);
+            IsMoving = true;
+
+            if (Vector2.Distance(transform.position, targetPosition) <= _waypointThreshold)
             {
-                _rotator.Rotate(CurrentDirection);
-                Move(CurrentDirection);
+                IsMoving = false;
+                _rigidbody.velocity = Vector2.zero;
+                _isWaiting = true;
             }
 
             yield return null;
         }
+    }
+
+    private IEnumerator PursueRoutine(Vector3 targetPosition)
+    {
+        while (true)
+        {
+            float distance = Vector2.Distance(transform.position, targetPosition);
+
+            if (distance > _pursuitStopDistance)
+            {
+                Vector2 direction = ((Vector2)targetPosition - _rigidbody.position).normalized;
+                UpdateMovement(direction, _pursuitSpeed);
+                IsMoving = true;
+            }
+            else
+            {
+                IsMoving = false;
+                _rigidbody.velocity = Vector2.zero;
+            }
+
+            yield return null;
+        }
+    }
+
+    private void UpdateMovement(Vector2 direction, float speed)
+    {
+        float moveDirection = Mathf.Sign(direction.x);
+
+        if (Mathf.Abs(moveDirection - CurrentDirection) > 0.1f)
+        {
+            _rotator.Rotate(moveDirection);
+            CurrentDirection = moveDirection;
+        }
+
+        _rigidbody.velocity = new Vector2(direction.x * speed, _rigidbody.velocity.y);
     }
 }

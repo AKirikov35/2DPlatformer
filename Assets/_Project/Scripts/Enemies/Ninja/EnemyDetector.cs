@@ -4,36 +4,44 @@ using UnityEngine;
 public class EnemyDetector : MonoBehaviour
 {
     public event Action<Vector3> PlayerDetected;
+    public event Action PlayerLost;
 
     [SerializeField] private LayerMask _layer;
-    [SerializeField] private float _range;
-
-    private RaycastHit2D _hit;
-    private Vector2 _rayOrigin;
-    private Vector2 _rayDirection;
+    [SerializeField] private float _detectionRange = 5f;
+    [SerializeField] private float _attackRange = 1.5f;
+    [SerializeField] private float _detectionAngle = 90f;
 
     public bool IsDetected { get; private set; } = false;
+    public bool IsInAttackRange { get; private set; } = false;
+    public Vector3 LastDetectedPosition { get; private set; }
 
     private void Update()
     {
-        Detected();
+        DetectPlayer();
     }
 
-    private void Detected()
+    private void DetectPlayer()
     {
-        _rayOrigin = gameObject.transform.position;
-        _rayDirection = gameObject.transform.right;
-        _hit = Physics2D.Raycast(_rayOrigin, _rayDirection, _range, _layer);
+        bool wasDetected = IsDetected;
+        IsDetected = false;
+        IsInAttackRange = false;
 
-        if (_hit.collider != null)
-            if (_hit.collider.TryGetComponent(out Player player))
+        Collider2D player = Physics2D.OverlapCircle(transform.position, _detectionRange, _layer);
+        if (player != null && player.TryGetComponent<Player>(out _))
+        {
+            float distance = Vector2.Distance(transform.position, player.transform.position);
+            IsDetected = true;
+            IsInAttackRange = distance <= _attackRange;
+            LastDetectedPosition = player.transform.position;
+
+            if (!wasDetected)
             {
-                PlayerDetected?.Invoke(player.gameObject.transform.position);
-                IsDetected = true;
+                PlayerDetected?.Invoke(player.transform.position);
             }
-            else
-            {
-                IsDetected = false;
-            }
+        }
+        else if (wasDetected)
+        {
+            PlayerLost?.Invoke();
+        }
     }
 }

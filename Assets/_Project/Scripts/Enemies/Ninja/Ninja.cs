@@ -3,12 +3,16 @@ using UnityEngine;
 public class Ninja : MonoBehaviour
 {
     [SerializeField] private NinjaAnimator _animator;
+    [SerializeField] private EnemyWeaponDetector _weaponDetector;
+    [SerializeField] private float _attackCooldown = 1f;
 
     private NinjaMover _mover;
     private NinjaHealth _health;
     private EnemyDetector _detector;
 
     private Vector3 _targetPosition;
+    private bool _isAttacking = false;
+    private float _lastAttackTime = 0f;
 
     private void Awake()
     {
@@ -19,38 +23,66 @@ public class Ninja : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float direction = _mover.CurrentDirection;
-        _animator.Move(Mathf.Abs(direction));
+        float moveInput = _mover.IsMoving && !_isAttacking ? Mathf.Abs(_mover.CurrentDirection) : 0f;
+        _animator.Move(moveInput);
 
         if (_detector.IsDetected)
-            Pursue(_targetPosition);
-        else
-            Patrol();
+        {
+            _targetPosition = _detector.LastDetectedPosition;
+
+            if (_detector.IsInAttackRange)
+            {
+                if (!_isAttacking && Time.time > _lastAttackTime + _attackCooldown)
+                {
+                    Attack();
+                }
+                else
+                {
+                    _mover.StopAllMovement();
+                }
+            }
+            else if (!_isAttacking)
+            {
+                _mover.StartPursue(_targetPosition);
+            }
+        }
+        else if (!_isAttacking)
+        {
+            _mover.StartPatrol();
+        }
     }
 
     private void OnEnable()
     {
         _health.NinjaDied += Died;
         _health.NinjaHurt += Hurt;
-        _detector.PlayerDetected += Pursue;
     }
 
     private void OnDisable()
     {
         _health.NinjaDied -= Died;
         _health.NinjaHurt -= Hurt;
-        _detector.PlayerDetected -= Pursue;
     }
 
-    private void Patrol()
+    private void Attack()
     {
-        _mover.StartPatrol();
+        _isAttacking = true;
+        _mover.StopAllMovement();
+        _animator.Attack();
+        _lastAttackTime = Time.time;
+
+        Invoke(nameof(PerformAttack), _animator.GetCurrentAnimationLength() * 0.5f);
+        Invoke(nameof(FinishAttack), _animator.GetCurrentAnimationLength());
     }
 
-    private void Pursue(Vector3 target)
+    private void PerformAttack()
     {
-        _targetPosition = target;
-        _mover.StartPursue(target);
+        _weaponDetector.Hit();
+    }
+
+    private void FinishAttack()
+    {
+        _isAttacking = false;
     }
 
     private void Died()
