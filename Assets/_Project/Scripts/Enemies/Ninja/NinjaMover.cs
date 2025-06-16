@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(CapsuleCollider2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(CapsuleCollider2D), typeof(Rotator))]
 public class NinjaMover : MonoBehaviour
 {
     [SerializeField] private Transform[] _patrolWaypoints;

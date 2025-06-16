@@ -62,21 +62,18 @@
     <Compile Include="Assets\_Project\Scripts\Player\PlayerAnimator.cs" />
     <Compile Include="Assets\_Project\Scripts\Rotator.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerMover.cs" />
-    <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\EnemyWeaponDetector.cs" />
-    <Compile Include="Assets\_Project\Scripts\Player\PlayerWeaponDetector.cs" />
     <Compile Include="Assets\_Project\Scripts\Collectibles\Spawner.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\Player.cs" />
     <Compile Include="Assets\_Project\Scripts\Health.cs" />
     <Compile Include="Assets\_Project\Scripts\Collectibles\Collectible.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaAnimator.cs" />
+    <Compile Include="Assets\_Project\Scripts\Weapon.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaAnimatorData.cs" />
     <Compile Include="Assets\_Project\Scripts\Collectibles\AidKit\AidKit.cs" />
     <Compile Include="Assets\_Project\Scripts\Collectibles\Coin\CoinSpawner.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\CollectiblesDetector.cs" />
-    <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\EnemyWeapon.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaHealth.cs" />
-    <Compile Include="Assets\_Project\Scripts\Player\PlayerWeapon.cs" />
     <Compile Include="Assets\_Project\Scripts\IDamageable.cs" />
     <Compile Include="Assets\_Project\Scripts\GroundDetector.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerAnimatorData.cs" />
@@ -84,10 +81,12 @@
     <Compile Include="Assets\_Project\Scripts\Collectibles\AidKit\AidKitSpawner.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\NinjaMover.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\InputReader.cs" />
+    <Compile Include="Assets\_Project\Scripts\Player\PlayerHandlerCollectibles.cs" />
     <Compile Include="Assets\_Project\Scripts\Ground.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\CameraFollow.cs" />
     <Compile Include="Assets\_Project\Scripts\Enemies\Ninja\EnemyDetector.cs" />
     <Compile Include="Assets\_Project\Scripts\Player\PlayerWallet.cs" />
+    <Compile Include="Assets\_Project\Scripts\WeaponDetector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

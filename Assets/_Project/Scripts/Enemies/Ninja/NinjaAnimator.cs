@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class NinjaAnimator : MonoBehaviour
 {
     private Animator _animator;

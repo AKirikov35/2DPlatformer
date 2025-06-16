@@ -1,25 +1,25 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(GroundDetector), typeof(InputReader))]
+[RequireComponent(typeof(PlayerMover), typeof(PlayerHealth), typeof(WeaponDetector))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private PlayerAnimator _animator;
-
+    private PlayerAnimator _animator;
     private GroundDetector _groundDetector;
     private InputReader _inputReader;
     private PlayerMover _mover;
     private PlayerHealth _health;
-    private PlayerWallet _wallet;
-    private PlayerWeaponDetector _weaponDetector;
+    private WeaponDetector _weaponDetector;
 
     private void Awake()
     {
+        _animator = GetComponentInChildren<PlayerAnimator>();
         _groundDetector = GetComponent<GroundDetector>();
         _inputReader = GetComponent<InputReader>();
         _mover = GetComponent<PlayerMover>();
         _health = GetComponent<PlayerHealth>();
-        _wallet = GetComponent<PlayerWallet>();
-        _weaponDetector = GetComponent<PlayerWeaponDetector>();
+        _weaponDetector = GetComponent<WeaponDetector>();
     }
 
     private void FixedUpdate()

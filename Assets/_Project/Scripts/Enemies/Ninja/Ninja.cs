@@ -1,11 +1,13 @@
 using UnityEngine;
 
+[RequireComponent(typeof(NinjaMover), typeof(NinjaHealth), typeof(EnemyDetector))]
+[RequireComponent(typeof(WeaponDetector))]
 public class Ninja : MonoBehaviour
 {
-    [SerializeField] private NinjaAnimator _animator;
-    [SerializeField] private EnemyWeaponDetector _weaponDetector;
     [SerializeField] private float _attackCooldown = 1f;
 
+    private NinjaAnimator _animator;
+    private WeaponDetector _weaponDetector;
     private NinjaMover _mover;
     private NinjaHealth _health;
     private EnemyDetector _detector;
@@ -16,6 +18,8 @@ public class Ninja : MonoBehaviour
 
     private void Awake()
     {
+        _animator = GetComponentInChildren<NinjaAnimator>();
+        _weaponDetector = GetComponent<WeaponDetector>();
         _mover = GetComponent<NinjaMover>();
         _health = GetComponent<NinjaHealth>();
         _detector = GetComponent<EnemyDetector>();

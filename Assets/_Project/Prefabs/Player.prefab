@@ -20,10 +20,11 @@ GameObject:
   - component: {fileID: 4828153682917288089}
   - component: {fileID: 2015175966985902388}
   - component: {fileID: 8995806140032517613}
-  - component: {fileID: 5199829009107588627}
-  m_Layer: 0
+  - component: {fileID: 434975568458138419}
+  - component: {fileID: 2779068345859814056}
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +43,7 @@ Transform:
   m_Children:
   - {fileID: 2240970819610796814}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &2685317837650318640
 CapsuleCollider2D:
@@ -118,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d739f7ed0e85b242ad8d17cf122861a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 6794888273999725429}
 --- !u!114 &7073795008196674391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa64556d90c7c1547b87bf24db6f23d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _aidKit: {fileID: 0}
 --- !u!114 &2015175966985902388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff633cf1483d9534689f8aee23d1b19c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coin: {fileID: 0}
 --- !u!114 &8995806140032517613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,9 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a63b9097ce8e148a4b8c76bf2b8824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 1.5
-  _damage: 10
---- !u!114 &5199829009107588627
+  <Range>k__BackingField: 1
+  <Damage>k__BackingField: 10
+--- !u!114 &434975568458138419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,12 +228,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 5361988265886694757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe6cef57792a8444689067fc0a5c03e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fcdd2a659b4d0e42b9a6bddfba02096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hitLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+--- !u!114 &2779068345859814056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361988265886694757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7dd4a0c8e37a0418a77646a6b8534f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aidKitSpawner: {fileID: 0}
+  _coinSpawner: {fileID: 0}
 --- !u!1 &5574121956170376102
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +260,7 @@ GameObject:
   - component: {fileID: 2099613676138365738}
   - component: {fileID: 2824518385456292667}
   - component: {fileID: 6794888273999725429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

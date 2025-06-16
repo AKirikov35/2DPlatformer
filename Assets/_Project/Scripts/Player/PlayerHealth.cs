@@ -1,10 +1,7 @@
 using System;
-using UnityEngine;
 
 public class PlayerHealth : Health
 {
-    [SerializeField] private AidKitSpawner _aidKit;
-
     public event Action PlayerDied;
     public event Action PlayerHurt;
 
@@ -12,16 +9,6 @@ public class PlayerHealth : Health
     {
         _maxHealth = 100;
         base.Awake();
-    }
-
-    private void OnEnable()
-    {
-        _aidKit.HealingReceived += TakeHeal;
-    }
-
-    private void OnDisable()
-    {
-        _aidKit.HealingReceived -= TakeHeal;
     }
 
     public override void TakeDamage(int damage)
