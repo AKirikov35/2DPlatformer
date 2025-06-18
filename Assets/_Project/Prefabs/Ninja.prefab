@@ -117,7 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87253564cd632674fafece50e623df40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 5587808189426950047}
   _attackCooldown: 1
+  _attackHitDelayRatio: 0.5
 --- !u!114 &4310957915066231148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,8 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa0ea625f339b6b4eaf9941494dc5ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <PatrolSpeed>k__BackingField: 3
-  <PursuitSpeed>k__BackingField: 4.5
+  _defaultSpeed: 3
+  _minThreshold: 0.1
 --- !u!114 &2180176809170099042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,10 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9e0bebf25092c4eb616768011605dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _layer:
+  _layers:
     serializedVersion: 2
     m_Bits: 64
-  _detectionRange: 5
+  _range: 5
 --- !u!114 &8013497015227360869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fcdd2a659b4d0e42b9a6bddfba02096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitLayer:
+  _targetLayers:
     serializedVersion: 2
     m_Bits: 64
 --- !u!114 &1289420818125948413
@@ -214,12 +216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9c1ae77f9439349b09f5710ce29b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <PatrolSpeed>k__BackingField: 3
-  <PursuitSpeed>k__BackingField: 4.5
   _waypoints:
   - {fileID: 3360114830385747442}
   - {fileID: 3042250662660053987}
   _waypointThreshold: 0.5
+  _patrolSpeedMultiplier: 1
+  _waitingAtWaypoint: 1
 --- !u!114 &3110985012466189354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,9 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27ef551353e16748ba360fce7d998d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <PatrolSpeed>k__BackingField: 3
-  <PursuitSpeed>k__BackingField: 4.5
   _stopDistance: 0.5
+  _pursuitSpeedMultiplier: 1.5
+  _waitingAfterLossTarget: 1
 --- !u!1 &3823570560426723429
 GameObject:
   m_ObjectHideFlags: 0

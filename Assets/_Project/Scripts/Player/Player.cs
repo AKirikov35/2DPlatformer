@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(GroundDetector), typeof(InputReader))]
-[RequireComponent(typeof(PlayerMover), typeof(Health), typeof(WeaponDetector))]
+[RequireComponent(typeof(PlayerMover), typeof(Health), typeof(MeleeAttacker))]
 public class Player : MonoBehaviour
 {
     private PlayerAnimator _animator;
@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private InputReader _inputReader;
     private PlayerMover _mover;
     private Health _health;
-    private WeaponDetector _weaponDetector;
+    private MeleeAttacker _meleeAttacker;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         _inputReader = GetComponent<InputReader>();
         _mover = GetComponent<PlayerMover>();
         _health = GetComponent<Health>();
-        _weaponDetector = GetComponent<WeaponDetector>();
+        _meleeAttacker = GetComponent<MeleeAttacker>();
     }
 
     private void FixedUpdate()
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         if (_inputReader.GetIsAttack())
         {
             _animator.Attack();
-            _weaponDetector.Hit();
+            _meleeAttacker.Strike();
         }
     }
 

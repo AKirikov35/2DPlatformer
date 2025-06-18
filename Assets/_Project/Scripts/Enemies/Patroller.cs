@@ -1,75 +1,59 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Patroller : NinjaMover
+public class Patroller : MonoBehaviour
 {
     [SerializeField] private Transform[] _waypoints;
     [SerializeField] private float _waypointThreshold = 0.5f;
+    [SerializeField] private float _patrolSpeedMultiplier = 1f;
+    [SerializeField] private float _waitingAtWaypoint = 1f;
 
-    private Coroutine _currentCoroutine;
-    private float _waypointThresholdSqr;
-    private int _currentWaypointIndex = 0;
-    private bool _isWaiting = false;
+    private NinjaMover _mover;
+    private Coroutine _patrolRoutine;
+    private WaitForSeconds _waitingTime;
+    private float _thresholdSqr;
+    private int _currentIndex;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
-        _waypointThresholdSqr = _waypointThreshold * _waypointThreshold;
+        _mover = GetComponent<NinjaMover>();
+        _waitingTime = new WaitForSeconds(_waitingAtWaypoint);
+        _thresholdSqr = _waypointThreshold * _waypointThreshold;
     }
 
     public void StartPatrol()
     {
-        if (_waypoints.Length == 0)
+        if (_waypoints.Length == 0) 
             return;
 
-        StopAllMovement();
-        _currentCoroutine = StartCoroutine(Routine());
+        StopPatrol();
+        _patrolRoutine = StartCoroutine(PatrolRoutine());
     }
 
-    public override void StopAllMovement()
+    public void StopPatrol()
     {
-        base.StopAllMovement();
+        if (_patrolRoutine != null) 
+            StopCoroutine(_patrolRoutine);
 
-        if (_currentCoroutine != null)
-            StopCoroutine(_currentCoroutine);
-
-        _isWaiting = false;
+        _mover.Stop();
     }
 
-    private IEnumerator Routine()
+    private IEnumerator PatrolRoutine()
     {
         while (true)
         {
-            if (_waypoints.Length == 0) 
-                yield break;
+            Vector2 targetPosition = _waypoints[_currentIndex].position;
+            Vector2 direction = targetPosition - (Vector2)transform.position;
 
-            if (_isWaiting)
+            if (direction.sqrMagnitude <= _thresholdSqr)
             {
-                _currentWaypointIndex = ++_currentWaypointIndex % _waypoints.Length;
-                _isWaiting = false;
+                _currentIndex = ++_currentIndex % _waypoints.Length;
+                _mover.Stop();
+                yield return _waitingTime;
                 continue;
             }
 
-            Vector2 targetPosition = _waypoints[_currentWaypointIndex].position;
-            Vector2 offset = targetPosition - _rigidbody.position;
-
-            if (offset.sqrMagnitude < 0.001f)
-            {
-                IsMoving = false;
-                _rigidbody.velocity = Vector2.zero;
-                _isWaiting = true;
-                continue;
-            }
-
-            UpdateMovement(offset.normalized, PatrolSpeed);
-
-            if (offset.sqrMagnitude <= _waypointThresholdSqr)
-            {
-                IsMoving = false;
-                _rigidbody.velocity = Vector2.zero;
-                _isWaiting = true;
-            }
-
+            _mover.Move(direction.normalized, _patrolSpeedMultiplier);
             yield return null;
         }
     }

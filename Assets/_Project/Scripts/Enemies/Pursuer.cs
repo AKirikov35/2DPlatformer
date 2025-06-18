@@ -1,47 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Pursuer : NinjaMover
+public class Pursuer : MonoBehaviour
 {
     [SerializeField] private float _stopDistance = 0.5f;
+    [SerializeField] private float _pursuitSpeedMultiplier = 1.5f;
 
-    private Coroutine _currentCoroutine;
+    private NinjaMover _mover;
+    private Coroutine _pursuitRoutine;
     private float _stopDistanceSqr;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
+        _mover = GetComponent<NinjaMover>();
         _stopDistanceSqr = _stopDistance * _stopDistance;
     }
 
-    public void StartPursue(Vector2 targetPosition)
+    public void StartPursuit(Vector2 targetPosition)
     {
-        StopAllMovement();
-        _currentCoroutine = StartCoroutine(Routine(targetPosition));
+        StopPursuit();
+        _pursuitRoutine = StartCoroutine(PursuitRoutine(targetPosition));
     }
 
-    public override void StopAllMovement()
+    public void StopPursuit()
     {
-        base.StopAllMovement();
+        if (_pursuitRoutine != null) 
+            StopCoroutine(_pursuitRoutine);
 
-        if (_currentCoroutine != null) 
-            StopCoroutine(_currentCoroutine);
+        _mover.Stop();
     }
 
-    private IEnumerator Routine(Vector2 targetPosition)
+    private IEnumerator PursuitRoutine(Vector2 targetPosition)
     {
         while (true)
         {
-            Vector2 offset = targetPosition - _rigidbody.position;
+            Vector2 direction = targetPosition - (Vector2)transform.position;
+            float sqrDistance = direction.sqrMagnitude;
 
-            if (offset.sqrMagnitude > _stopDistanceSqr)
+            if (sqrDistance > _stopDistanceSqr)
             {
-                UpdateMovement(offset.normalized, PursuitSpeed);
+                _mover.Move(direction.normalized, _pursuitSpeedMultiplier);
             }
             else
             {
-                IsMoving = false;
-                _rigidbody.velocity = Vector2.zero;
+                _mover.Stop();
+                yield break;
             }
 
             yield return null;

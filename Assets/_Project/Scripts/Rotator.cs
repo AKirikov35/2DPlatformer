@@ -2,23 +2,24 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    private const float LeftAngle = 180f;
-    private const float RightAngle = 0f;
-
-    private float _currentAngle;
+    private Quaternion _left;
+    private Quaternion _right;
+    private Quaternion _current;
 
     private void Awake()
     {
-        _currentAngle = RightAngle;
-        transform.rotation = Quaternion.Euler(0f, _currentAngle, 0f);
+        _left = Quaternion.Euler(0f, 180f, 0f);
+        _right = Quaternion.Euler(0f, 0f, 0f);
+        _current = _right;
+        transform.rotation = _current;
     }
 
     public void Rotate(float direction)
     {
-        if (direction == 0f)
+        if (direction == 0f) 
             return;
 
-        _currentAngle = direction < 0f ? LeftAngle : RightAngle;
-        transform.rotation = Quaternion.Euler(0f, _currentAngle, 0f);
+        _current = direction < 0f ? _left : _right;
+        transform.rotation = _current;
     }
 }

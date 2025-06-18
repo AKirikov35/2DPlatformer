@@ -17,7 +17,10 @@ public class Health : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
-        Current -= damage;
+        if (damage <= 0) 
+            return;
+
+        Current = Math.Clamp(Current - damage, 0, _max);
 
         if (Current <= 0)
             Died?.Invoke();
@@ -27,9 +30,9 @@ public class Health : MonoBehaviour, IDamageable
 
     public void TakeHeal(int value)
     {
-        Current += value;
+        if (value <= 0) 
+            return;
 
-        if (Current > _max)
-            Current = _max;
+        Current = Math.Clamp(Current + value, 0, _max);
     }
 }

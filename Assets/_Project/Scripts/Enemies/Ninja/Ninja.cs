@@ -1,91 +1,136 @@
+using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(NinjaMover), typeof(Health), typeof(EnemyDetector))]
-[RequireComponent(typeof(WeaponDetector), typeof(Patroller), typeof(Pursuer))]
+[RequireComponent(typeof(NinjaMover), typeof(Patroller), typeof(Pursuer))]
+[RequireComponent(typeof(MeleeAttacker), typeof(Health), typeof(EnemyVision))]
 public class Ninja : MonoBehaviour
 {
+    [SerializeField] private NinjaAnimator _animator;
     [SerializeField] private float _attackCooldown = 1f;
+    [SerializeField] private float _attackHitDelayRatio = 0.5f;
 
-    private NinjaAnimator _animator;
-    private WeaponDetector _weaponDetector;
     private NinjaMover _mover;
-    private Health _health;
-    private EnemyDetector _detector;
     private Patroller _patroller;
     private Pursuer _pursuer;
+    private MeleeAttacker _attacker;
+    private Health _health;
+    private EnemyVision _vision;
 
-    private Vector3 _targetPosition;
-    private bool _isAttacking = false;
-    private float _lastAttackTime = 0f;
+    private Coroutine _attackCoroutine;
+    private Vector3 _lastTargetPosition;
+    private bool _isAttacking;
+    private float _lastAttackTime;
+    private WaitForSeconds _waitForHitDelay;
+    private WaitForSeconds _waitForAttackFinish;
+    private float _lastAttackLength;
 
     private void Awake()
     {
-        _animator = GetComponentInChildren<NinjaAnimator>();
-        _weaponDetector = GetComponent<WeaponDetector>();
         _mover = GetComponent<NinjaMover>();
-        _health = GetComponent<Health>();
-        _detector = GetComponent<EnemyDetector>();
         _patroller = GetComponent<Patroller>();
         _pursuer = GetComponent<Pursuer>();
+        _attacker = GetComponent<MeleeAttacker>();
+        _health = GetComponent<Health>();
+        _vision = GetComponent<EnemyVision>();
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
-        float moveInput = _isAttacking == false ? Mathf.Abs(_mover.CurrentDirection) : 0f;
-        _animator.Move(moveInput);
-
-        if (_detector.IsDetected)
+        if (_animator == null)
         {
-            _targetPosition = _detector.LastDetectedPosition;
+            enabled = false;
+            return;
+        }
 
-            if (_detector.IsInAttackRange)
-            {
-                if (_isAttacking == false && Time.time > _lastAttackTime + _attackCooldown)
-                {
-                    Attack();
-                }
-                else
-                {
-                    _mover.StopAllMovement();
-                }
-            }
-            else if (_isAttacking == false)
-            {
-                _pursuer.StartPursue(_targetPosition);
-            }
-        }
-        else if (_isAttacking == false)
-        {
-            _patroller.StartPatrol();
-        }
+        UpdateAttackDelays(_animator.GetCurrentAnimationLength());
+    }
+
+    private void UpdateAttackDelays(float attackLength)
+    {
+        if (Mathf.Approximately(attackLength, _lastAttackLength))
+            return;
+
+        _lastAttackLength = attackLength;
+        float hitDelay = attackLength * _attackHitDelayRatio;
+        _waitForHitDelay = new WaitForSeconds(hitDelay);
+        _waitForAttackFinish = new WaitForSeconds(attackLength - hitDelay);
     }
 
     private void OnEnable()
     {
-        _health.Died += Died;
-        _health.Hurt += Hurt;
+        _health.Died += OnDeath;
+        _health.Hurt += OnHurt;
+        _vision.OnTargetSpotted += OnTargetSpotted;
     }
 
     private void OnDisable()
     {
-        _health.Died -= Died;
-        _health.Hurt -= Hurt;
+        _health.Died -= OnDeath;
+        _health.Hurt -= OnHurt;
+        _vision.OnTargetSpotted -= OnTargetSpotted;
+    }
+
+    private void FixedUpdate()
+    {
+        UpdateAnimation();
+        HandleAIBehavior();
+    }
+
+    private void UpdateAnimation()
+    {
+        float moveInput = _isAttacking ? 0f : Mathf.Abs(_mover.CurrentDirection);
+        _animator.Move(moveInput);
+    }
+
+    private void HandleAIBehavior()
+    {
+        if (_isAttacking) return;
+
+        if (_vision.HasTarget)
+        {
+            _lastTargetPosition = _vision.LastTargetPosition;
+
+            if (_vision.InAttackRange)
+            {
+                _pursuer.StopPursuit();
+
+                if (Time.time > _lastAttackTime + _attackCooldown)
+                {
+                    Attack();
+                }
+            }
+            else
+            {
+                _patroller.StopPatrol();
+                _pursuer.StartPursuit(_lastTargetPosition);
+            }
+        }
+        else
+        {
+            _pursuer.StopPursuit(); 
+            _patroller.StartPatrol();
+        }
     }
 
     private void Attack()
     {
+        if (_attackCoroutine != null)
+            StopCoroutine(_attackCoroutine);
+
         _isAttacking = true;
-        _mover.StopAllMovement();
+        _mover.Stop();
         _animator.Attack();
         _lastAttackTime = Time.time;
 
-        Invoke(nameof(PerformAttack), _animator.GetCurrentAnimationLength() * 0.5f);
-        Invoke(nameof(FinishAttack), _animator.GetCurrentAnimationLength());
+        float currentAttackLength = _animator.GetCurrentAnimationLength();
+        UpdateAttackDelays(currentAttackLength);
+
+        _attackCoroutine = StartCoroutine(AttackSequence());
     }
 
     private void PerformAttack()
     {
-        _weaponDetector.Hit();
+        _attacker.Strike();
     }
 
     private void FinishAttack()
@@ -93,15 +138,29 @@ public class Ninja : MonoBehaviour
         _isAttacking = false;
     }
 
-    private void Died()
+    private void OnTargetSpotted(Vector3 position)
     {
-        _animator.Died();
-        _mover.gameObject.SetActive(false);
-        gameObject.SetActive(false);
+        _lastTargetPosition = position;
     }
 
-    private void Hurt()
+    private void OnHurt()
     {
         _animator.Hurt();
+    }
+
+    private void OnDeath()
+    {
+        _animator.Died();
+        _mover.enabled = false;
+        enabled = false;
+    }
+
+    private IEnumerator AttackSequence()
+    {
+        yield return _waitForHitDelay;
+        PerformAttack();
+
+        yield return _waitForAttackFinish;
+        FinishAttack();
     }
 }

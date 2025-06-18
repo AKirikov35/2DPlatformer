@@ -3,72 +3,44 @@
   "WorkspaceRootPath": "D:\\Programs\\GitHub\\2DPlatformer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|d:\\programs\\github\\2dplatformer\\assets\\_project\\scripts\\enemies\\ninja\\ninjamover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\enemies\\ninja\\ninja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\ninja\\ninja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\enemies\\ninja\\ninjamover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\ninja\\ninjamover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\enemies\\ninja\\enemydetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\ninja\\enemydetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\enemies\\patroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\patroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\enemies\\pursuer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\pursuer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|d:\\programs\\github\\2dplatformer\\assets\\_project\\scripts\\enemies\\enemyvision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\enemyvision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|d:\\programs\\github\\2dplatformer\\assets\\_project\\scripts\\meleeattacker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\meleeattacker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|d:\\programs\\github\\2dplatformer\\assets\\_project\\scripts\\rotator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\rotator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|d:\\programs\\github\\2dplatformer\\assets\\_project\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|d:\\programs\\github\\2dplatformer\\assets\\_project\\scripts\\collectibles\\iaidkitvisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\collectibles\\iaidkitvisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\enemies\\ninja\\ninjaanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\enemies\\ninja\\ninjaanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\player\\playeranimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\player\\playeranimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\player\\icollectiblevisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\player\\icollectiblevisitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\player\\playerhandlercollectibles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\player\\playerhandlercollectibles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\collectibles\\aidkit\\aidkit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\collectibles\\aidkit\\aidkit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\collectibles\\aidkit\\aidkitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\collectibles\\aidkit\\aidkitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\collectibles\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\collectibles\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\collectibles\\collectiblehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\collectibles\\collectiblehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\collectibles\\collectible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\collectibles\\collectible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\collectibles\\coin\\coinspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\collectibles\\coin\\coinspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\collectibles\\coin\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\collectibles\\coin\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\player\\collectiblesdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\player\\collectiblesdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\player\\playeranimatordata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\player\\playeranimatordata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|D:\\Programs\\GitHub\\2DPlatformer\\assets\\_project\\scripts\\player\\playermover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B96806D-EA4F-29C8-FFFC-08AB6B85CCB6}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\player\\playermover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,211 +50,135 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PlayerHandlerCollectibles.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\PlayerHandlerCollectibles.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Player\\PlayerHandlerCollectibles.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\PlayerHandlerCollectibles.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Player\\PlayerHandlerCollectibles.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T08:28:12.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Health.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Health.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Health.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Health.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Health.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T08:13:44.729Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Collectible.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\Collectible.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Collectibles\\Collectible.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\Collectible.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Collectibles\\Collectible.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T08:14:13.53Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CollectiblesDetector.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\CollectiblesDetector.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Player\\CollectiblesDetector.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\CollectiblesDetector.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Player\\CollectiblesDetector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T08:27:54.837Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CoinSpawner.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\Coin\\CoinSpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Collectibles\\Coin\\CoinSpawner.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\Coin\\CoinSpawner.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Collectibles\\Coin\\CoinSpawner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T08:14:51.66Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Coin.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\Coin\\Coin.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Collectibles\\Coin\\Coin.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\Coin\\Coin.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Collectibles\\Coin\\Coin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T08:14:48.568Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AidKit.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\AidKit\\AidKit.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Collectibles\\AidKit\\AidKit.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\AidKit\\AidKit.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Collectibles\\AidKit\\AidKit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T12:37:36.664Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Spawner.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\Spawner.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Collectibles\\Spawner.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\Spawner.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Collectibles\\Spawner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T12:39:31.908Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AidKitSpawner.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\AidKit\\AidKitSpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Collectibles\\AidKit\\AidKitSpawner.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\AidKit\\AidKitSpawner.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Collectibles\\AidKit\\AidKitSpawner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T12:43:32.782Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "CollectibleHandler.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\CollectibleHandler.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Collectibles\\CollectibleHandler.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\CollectibleHandler.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Collectibles\\CollectibleHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T12:49:41.487Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ICollectibleVisitor.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\ICollectibleVisitor.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Player\\ICollectibleVisitor.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\ICollectibleVisitor.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Player\\ICollectibleVisitor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T12:50:39.928Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PlayerMover.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\PlayerMover.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Player\\PlayerMover.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\PlayerMover.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Player\\PlayerMover.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T08:19:00.583Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlayerAnimator.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\PlayerAnimator.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Player\\PlayerAnimator.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\PlayerAnimator.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Player\\PlayerAnimator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T08:28:05.769Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "PlayerAnimatorData.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\PlayerAnimatorData.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Player\\PlayerAnimatorData.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Player\\PlayerAnimatorData.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Player\\PlayerAnimatorData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T08:28:09.765Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "NinjaAnimator.cs",
               "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimator.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimator.cs",
               "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimator.cs",
               "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaAnimator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wAMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-17T13:00:44.582Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EnemyDetector.cs",
-              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\EnemyDetector.cs",
-              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\EnemyDetector.cs",
-              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\EnemyDetector.cs",
-              "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\EnemyDetector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Ninja.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\Ninja.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\Ninja.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\Ninja.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\Ninja.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAmwFwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T13:01:53.111Z"
+              "WhenOpened": "2025-06-18T07:03:02.242Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "NinjaMover.cs",
               "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaMover.cs",
               "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaMover.cs",
               "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaMover.cs",
               "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Ninja\\NinjaMover.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T05:09:28.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Patroller.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Patroller.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Patroller.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Patroller.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Patroller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T07:05:28.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Pursuer.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Pursuer.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\Pursuer.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\Pursuer.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\Pursuer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T07:05:29.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAidKitVisitor.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\IAidKitVisitor.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Collectibles\\IAidKitVisitor.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Collectibles\\IAidKitVisitor.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Collectibles\\IAidKitVisitor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAA6wAIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T08:03:15.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Health.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Health.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Health.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Health.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Health.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T13:53:02.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Rotator.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Rotator.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Rotator.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Rotator.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Rotator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T14:26:04.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MeleeAttacker.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\MeleeAttacker.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\MeleeAttacker.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\MeleeAttacker.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\MeleeAttacker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T14:40:51.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EnemyVision.cs",
+              "DocumentMoniker": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\EnemyVision.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Enemies\\EnemyVision.cs",
+              "ToolTip": "D:\\Programs\\GitHub\\2DPlatformer\\Assets\\_Project\\Scripts\\Enemies\\EnemyVision.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Enemies\\EnemyVision.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwAsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T14:44:52.506Z",
               "EditorCaption": ""
             }
           ]

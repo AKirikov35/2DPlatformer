@@ -3,32 +3,28 @@
 [RequireComponent(typeof(Rigidbody2D), typeof(CapsuleCollider2D), typeof(Rotator))]
 public class NinjaMover : MonoBehaviour
 {
-    [field: SerializeField] public float PatrolSpeed { get; private set; } = 3f;
-    [field: SerializeField] public float PursuitSpeed { get; private set; } = 4.5f;
+    [SerializeField] private float _defaultSpeed = 3f;
+    [SerializeField] private float _minThreshold = 0.1f;
 
-    protected Rigidbody2D _rigidbody;
-    protected Rotator _rotator;
+    private Rigidbody2D _rigidbody;
+    private Rotator _rotator;
+    private float _minThresholdSqr;
 
-    public float CurrentDirection { get; protected set; } = 1f;
-    public bool IsMoving { get; protected set; }
+    public float CurrentDirection { get; private set; } = 1f;
+    public bool IsMoving { get; private set; }
 
-    protected virtual void Awake()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _rotator = GetComponent<Rotator>();
+        _minThresholdSqr = _minThreshold * _minThreshold;
     }
 
-    public virtual void StopAllMovement()
+    public void Move(Vector2 direction, float speedMultiplier = 1f)
     {
-        _rigidbody.velocity = Vector2.zero;
-        IsMoving = false;
-    }
-
-    protected void UpdateMovement(Vector2 direction, float speed)
-    {
-        if (direction.magnitude < 0.1f)
+        if (direction.sqrMagnitude < _minThresholdSqr)
         {
-            IsMoving = false;
+            Stop();
             return;
         }
 
@@ -40,7 +36,13 @@ public class NinjaMover : MonoBehaviour
             CurrentDirection = moveDirection;
         }
 
-        _rigidbody.velocity = new Vector2(direction.x * speed, _rigidbody.velocity.y);
+        _rigidbody.velocity = direction.normalized * (_defaultSpeed * speedMultiplier);
         IsMoving = true;
+    }
+
+    public void Stop()
+    {
+        _rigidbody.velocity = Vector2.zero;
+        IsMoving = false;
     }
 }

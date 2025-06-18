@@ -12,7 +12,15 @@ public class NinjaAnimator : MonoBehaviour
 
     public float GetCurrentAnimationLength()
     {
-        return _animator.GetCurrentAnimatorStateInfo(0).length;
+        if (_animator == null || !_animator.isInitialized)
+            return 0f;
+
+        var stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.length == 0)
+            return 0.5f;
+
+        return stateInfo.length;
     }
 
     public void Move(float direction)
