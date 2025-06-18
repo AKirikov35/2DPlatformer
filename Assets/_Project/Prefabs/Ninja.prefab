@@ -14,10 +14,12 @@ GameObject:
   - component: {fileID: 6094095283416631775}
   - component: {fileID: 4310957915066231148}
   - component: {fileID: 2180176809170099042}
-  - component: {fileID: 4074666472582326361}
   - component: {fileID: 8451297064246604776}
   - component: {fileID: 103125989189735348}
   - component: {fileID: 8013497015227360869}
+  - component: {fileID: 1289420818125948413}
+  - component: {fileID: 2395044929394483212}
+  - component: {fileID: 3110985012466189354}
   m_Layer: 0
   m_Name: NinjaCollider
   m_TagString: Untagged
@@ -128,11 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa0ea625f339b6b4eaf9941494dc5ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patrolWaypoints: []
-  _patrolSpeed: 3
-  _pursuitSpeed: 4.5
-  _waypointThreshold: 0.5
-  _pursuitStopDistance: 0.5
+  <PatrolSpeed>k__BackingField: 3
+  <PursuitSpeed>k__BackingField: 4.5
 --- !u!114 &2180176809170099042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,18 +142,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d56f57c53bd96241bf23aac4fe1197d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4074666472582326361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3253843845529154008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74955e7a30fd4a144bf63daad461a4d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8451297064246604776
@@ -187,8 +174,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _detectionRange: 5
-  _attackRange: 1.5
-  _detectionAngle: 90
 --- !u!114 &8013497015227360869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +189,52 @@ MonoBehaviour:
   _hitLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1289420818125948413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253843845529154008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f400c096c81f442aa0c11027e30813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _max: 100
+--- !u!114 &2395044929394483212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253843845529154008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f9c1ae77f9439349b09f5710ce29b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PatrolSpeed>k__BackingField: 3
+  <PursuitSpeed>k__BackingField: 4.5
+  _waypoints:
+  - {fileID: 3360114830385747442}
+  - {fileID: 3042250662660053987}
+  _waypointThreshold: 0.5
+--- !u!114 &3110985012466189354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253843845529154008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27ef551353e16748ba360fce7d998d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PatrolSpeed>k__BackingField: 3
+  <PursuitSpeed>k__BackingField: 4.5
+  _stopDistance: 0.5
 --- !u!1 &3823570560426723429
 GameObject:
   m_ObjectHideFlags: 0

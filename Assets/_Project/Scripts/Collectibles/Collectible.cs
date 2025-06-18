@@ -10,4 +10,6 @@ public abstract class Collectible : MonoBehaviour
         _collider = GetComponent<CircleCollider2D>();
         _collider.isTrigger = true;
     }
+
+    public abstract void Accept(ICollectibleVisitor visitor);
 }

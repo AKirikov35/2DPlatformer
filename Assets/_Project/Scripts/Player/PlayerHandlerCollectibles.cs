@@ -1,39 +1,35 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerHealth), typeof(PlayerWallet))]
+[RequireComponent(typeof(Health), typeof(PlayerWallet))]
 public class PlayerHandlerCollectibles : MonoBehaviour
 {
-    [SerializeField] AidKitSpawner _aidKitSpawner;
-    [SerializeField] CoinSpawner _coinSpawner;
+    [SerializeField] private CollectiblesDetector _detector;
+    [SerializeField] private CoinSpawner _coinSpawner;
+    [SerializeField] private AidKitSpawner _aidKitSpawner;
 
-    private PlayerHealth _health;
+    private Health _health;
     private PlayerWallet _wallet;
+    private CollectibleHandler _handler;
 
     private void Awake()
     {
-        _health = GetComponent<PlayerHealth>();
+        _health = GetComponent<Health>();
         _wallet = GetComponent<PlayerWallet>();
+        _handler = new CollectibleHandler(_health, _wallet, _coinSpawner, _aidKitSpawner);
     }
 
     private void OnEnable()
     {
-        _aidKitSpawner.HealingReceived += TakeHeal;
-        _coinSpawner.CoinsRewarded += GainGold;
+        _detector.CollectibleDetected += OnCollectibleDetected;
     }
 
     private void OnDisable()
     {
-        _aidKitSpawner.HealingReceived -= TakeHeal;
-        _coinSpawner.CoinsRewarded -= GainGold;
+        _detector.CollectibleDetected -= OnCollectibleDetected;
     }
 
-    private void TakeHeal(int value)
+    private void OnCollectibleDetected(Collectible collectible)
     {
-        _health.TakeHeal(value);
-    }
-
-    private void GainGold(int value)
-    {
-        _wallet.GainGold(value);
+        collectible.Accept(_handler);
     }
 }

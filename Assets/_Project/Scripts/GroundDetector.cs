@@ -2,17 +2,19 @@
 
 public class GroundDetector : MonoBehaviour
 {
-    public bool IsGround { get; private set; }
+    private int _groundContactCount = 0;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent<Ground>(out _))
-            IsGround = true;
+            _groundContactCount++;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent<Ground>(out _))
-            IsGround = false;
+            _groundContactCount = Mathf.Max(0, _groundContactCount - 1);
     }
+
+    public bool IsGrounded() => _groundContactCount > 0;
 }

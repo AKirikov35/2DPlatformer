@@ -4,13 +4,12 @@ using UnityEngine;
 [RequireComponent(typeof(Weapon))]
 public class EnemyDetector : MonoBehaviour
 {
-    public event Action<Vector3> PlayerDetected;
-    public event Action PlayerLost;
-
     [SerializeField] private LayerMask _layer;
     [SerializeField] private float _detectionRange = 5f;
-
     private Weapon _weapon;
+
+    public event Action<Vector3> PlayerDetected;
+    public event Action PlayerLost;
 
     public bool IsDetected { get; private set; } = false;
     public bool IsInAttackRange { get; private set; } = false;
@@ -33,12 +32,13 @@ public class EnemyDetector : MonoBehaviour
         IsInAttackRange = false;
 
         Collider2D player = Physics2D.OverlapCircle(transform.position, _detectionRange, _layer);
-        
+
         if (player != null && player.TryGetComponent<Player>(out _))
         {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
+            float sqrDistance = (player.transform.position - transform.position).sqrMagnitude;
+            float sqrWeaponRange = _weapon.Range * _weapon.Range;
             IsDetected = true;
-            IsInAttackRange = distance <= _weapon.Range;
+            IsInAttackRange = sqrDistance <= sqrWeaponRange;
             LastDetectedPosition = player.transform.position;
 
             if (!wasDetected)

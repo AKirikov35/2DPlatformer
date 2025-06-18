@@ -17,11 +17,11 @@ GameObject:
   - component: {fileID: 6961386124599548973}
   - component: {fileID: 1284936301072364411}
   - component: {fileID: 2211589577527909833}
-  - component: {fileID: 4828153682917288089}
   - component: {fileID: 2015175966985902388}
   - component: {fileID: 8995806140032517613}
   - component: {fileID: 434975568458138419}
   - component: {fileID: 2779068345859814056}
+  - component: {fileID: 6489326123418336600}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -43,7 +43,7 @@ Transform:
   m_Children:
   - {fileID: 2240970819610796814}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &2685317837650318640
 CapsuleCollider2D:
@@ -181,18 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d1bc5a9aff7e494fa7f629b83bb19a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4828153682917288089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5361988265886694757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa64556d90c7c1547b87bf24db6f23d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2015175966985902388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +236,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aidKitSpawner: {fileID: 0}
   _coinSpawner: {fileID: 0}
+--- !u!114 &6489326123418336600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361988265886694757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f400c096c81f442aa0c11027e30813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _max: 30
 --- !u!1 &5574121956170376102
 GameObject:
   m_ObjectHideFlags: 0

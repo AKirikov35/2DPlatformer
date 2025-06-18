@@ -2,14 +2,14 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(GroundDetector), typeof(InputReader))]
-[RequireComponent(typeof(PlayerMover), typeof(PlayerHealth), typeof(WeaponDetector))]
+[RequireComponent(typeof(PlayerMover), typeof(Health), typeof(WeaponDetector))]
 public class Player : MonoBehaviour
 {
     private PlayerAnimator _animator;
     private GroundDetector _groundDetector;
     private InputReader _inputReader;
     private PlayerMover _mover;
-    private PlayerHealth _health;
+    private Health _health;
     private WeaponDetector _weaponDetector;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
         _groundDetector = GetComponent<GroundDetector>();
         _inputReader = GetComponent<InputReader>();
         _mover = GetComponent<PlayerMover>();
-        _health = GetComponent<PlayerHealth>();
+        _health = GetComponent<Health>();
         _weaponDetector = GetComponent<WeaponDetector>();
     }
 
@@ -31,12 +31,12 @@ public class Player : MonoBehaviour
             _mover.Move(direction);
         }
 
-        if (_groundDetector.IsGround)
+        if (_groundDetector.IsGrounded())
         {
             _animator.Land();
         }
 
-        if (_inputReader.GetIsJump() && _groundDetector.IsGround)
+        if (_inputReader.GetIsJump() && _groundDetector.IsGrounded())
         {
             _animator.Jump();
             _mover.Jump();
@@ -51,14 +51,14 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        _health.PlayerDied += Died;
-        _health.PlayerHurt += Hurt;
+        _health.Died += Died;
+        _health.Hurt += Hurt;
     }
 
     private void OnDisable()
     {
-        _health.PlayerDied -= Died;
-        _health.PlayerHurt += Hurt;
+        _health.Died -= Died;
+        _health.Hurt += Hurt;
     }
 
     private void Hurt()

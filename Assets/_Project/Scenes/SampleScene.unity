@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1289420818125948413, guid: e8dbe18ebbebba542acdea7270388f68, type: 3}
+      propertyPath: _max
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3253843845529154008, guid: e8dbe18ebbebba542acdea7270388f68, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -607,6 +611,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8013497015227360869, guid: e8dbe18ebbebba542acdea7270388f68, type: 3}
     - {fileID: 103125989189735348, guid: e8dbe18ebbebba542acdea7270388f68, type: 3}
+    - {fileID: 4074666472582326361, guid: e8dbe18ebbebba542acdea7270388f68, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -660,9 +665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428794a5237ed4a40a1554d1f24c2b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detector: {fileID: 1545444824}
-  _item: {fileID: 2946422859474776194, guid: aba730b831c52db4981c660bad21aaaf, type: 3}
-  _spawnPosition:
+  _itemPrefab: {fileID: 2946422859474776194, guid: aba730b831c52db4981c660bad21aaaf, type: 3}
+  _spawnPositions:
   - {fileID: 1587032687}
   - {fileID: 2046493655}
   - {fileID: 176711471}
@@ -1143,9 +1147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd00a017bd9a00d4792cd5ef34f05289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detector: {fileID: 1545444824}
-  _item: {fileID: -449199000159359406, guid: fb31c790a6d4c5c47ab721979d3a96f8, type: 3}
-  _spawnPosition:
+  _itemPrefab: {fileID: -449199000159359406, guid: fb31c790a6d4c5c47ab721979d3a96f8, type: 3}
+  _spawnPositions:
   - {fileID: 1691531267}
   - {fileID: 41453878}
 --- !u!1 &853399724
@@ -2560,6 +2563,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2779068345859814056, guid: abc01c63df1368648a177622c5b82198, type: 3}
+      propertyPath: _detector
+      value: 
+      objectReference: {fileID: 1545444824}
+    - target: {fileID: 2779068345859814056, guid: abc01c63df1368648a177622c5b82198, type: 3}
       propertyPath: _coinSpawner
       value: 
       objectReference: {fileID: 128882142}
@@ -2615,7 +2622,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4828153682917288089, guid: abc01c63df1368648a177622c5b82198, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7336,6 +7344,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1289420818125948413, guid: e8dbe18ebbebba542acdea7270388f68, type: 3}
+      propertyPath: _max
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3253843845529154008, guid: e8dbe18ebbebba542acdea7270388f68, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -7396,7 +7408,8 @@ PrefabInstance:
       propertyPath: <Damage>k__BackingField
       value: 20
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4074666472582326361, guid: e8dbe18ebbebba542acdea7270388f68, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -9,8 +9,6 @@ public class PlayerMover : MonoBehaviour
     [SerializeField, Range(1f, 10f)] private float _moveSpeed = 4f;
     [SerializeField, Range(3f, 12f)] private float _jumpForce = 7f;
 
-    //public float MoveSpeed { get; private set; } = 0f;
-
     private Rigidbody2D _rigidbody;
     private Rotator _rotator;
 

@@ -3,12 +3,11 @@ using UnityEngine;
 
 public abstract class Spawner : MonoBehaviour
 {
-    [SerializeField] protected CollectiblesDetector _detector;
-    [SerializeField] protected Collectible _item;
-    [SerializeField] protected Transform[] _spawnPosition;
+    [SerializeField] protected Collectible _itemPrefab;
+    [SerializeField] protected Transform[] _spawnPositions;
 
-    protected Dictionary<Collectible, int> _collectibles;
-    protected int _value;
+    protected Dictionary<Collectible, int> _collectibles = new Dictionary<Collectible, int>();
+    protected int _defaultValue;
 
     public int GetValue(Collectible collectible) => _collectibles[collectible];
 
@@ -19,14 +18,14 @@ public abstract class Spawner : MonoBehaviour
 
     protected virtual void Spawn()
     {
-        for (int i = 0; i < _spawnPosition.Length; i++)
+        foreach (var position in _spawnPositions)
         {
-            var instance = Instantiate(_item, _spawnPosition[i].transform.position, Quaternion.identity);
-            _collectibles.Add(instance, _value);
+            var instance = Instantiate(_itemPrefab, position.position, Quaternion.identity);
+            _collectibles.Add(instance, _defaultValue);
         }
     }
 
-    protected virtual void Destroy(Collectible item)
+    public virtual void Destroy(Collectible item)
     {
         _collectibles.Remove(item);
         Destroy(item.gameObject);

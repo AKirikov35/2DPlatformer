@@ -1,18 +1,35 @@
+using System;
 using UnityEngine;
 
-public abstract class Health : MonoBehaviour, IDamageable
+public class Health : MonoBehaviour, IDamageable
 {
-    protected int _maxHealth;
+    public event Action Died;
+    public event Action Hurt;
 
-    public int CurrentHealth { get; protected set; }
+    [SerializeField] private int _max = 100;
 
-    protected virtual void Awake()
+    public int Current { get; protected set; }
+
+    private void Awake()
     {
-        CurrentHealth = _maxHealth;
+        Current = _max;
     }
 
-    public virtual void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
-        CurrentHealth -= damage;
+        Current -= damage;
+
+        if (Current <= 0)
+            Died?.Invoke();
+        else
+            Hurt?.Invoke();
+    }
+
+    public void TakeHeal(int value)
+    {
+        Current += value;
+
+        if (Current > _max)
+            Current = _max;
     }
 }

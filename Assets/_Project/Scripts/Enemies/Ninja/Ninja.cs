@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[RequireComponent(typeof(NinjaMover), typeof(NinjaHealth), typeof(EnemyDetector))]
-[RequireComponent(typeof(WeaponDetector))]
+[RequireComponent(typeof(NinjaMover), typeof(Health), typeof(EnemyDetector))]
+[RequireComponent(typeof(WeaponDetector), typeof(Patroller), typeof(Pursuer))]
 public class Ninja : MonoBehaviour
 {
     [SerializeField] private float _attackCooldown = 1f;
@@ -9,8 +9,10 @@ public class Ninja : MonoBehaviour
     private NinjaAnimator _animator;
     private WeaponDetector _weaponDetector;
     private NinjaMover _mover;
-    private NinjaHealth _health;
+    private Health _health;
     private EnemyDetector _detector;
+    private Patroller _patroller;
+    private Pursuer _pursuer;
 
     private Vector3 _targetPosition;
     private bool _isAttacking = false;
@@ -21,13 +23,15 @@ public class Ninja : MonoBehaviour
         _animator = GetComponentInChildren<NinjaAnimator>();
         _weaponDetector = GetComponent<WeaponDetector>();
         _mover = GetComponent<NinjaMover>();
-        _health = GetComponent<NinjaHealth>();
+        _health = GetComponent<Health>();
         _detector = GetComponent<EnemyDetector>();
+        _patroller = GetComponent<Patroller>();
+        _pursuer = GetComponent<Pursuer>();
     }
 
     private void FixedUpdate()
     {
-        float moveInput = _mover.IsMoving && !_isAttacking ? Mathf.Abs(_mover.CurrentDirection) : 0f;
+        float moveInput = _isAttacking == false ? Mathf.Abs(_mover.CurrentDirection) : 0f;
         _animator.Move(moveInput);
 
         if (_detector.IsDetected)
@@ -36,7 +40,7 @@ public class Ninja : MonoBehaviour
 
             if (_detector.IsInAttackRange)
             {
-                if (!_isAttacking && Time.time > _lastAttackTime + _attackCooldown)
+                if (_isAttacking == false && Time.time > _lastAttackTime + _attackCooldown)
                 {
                     Attack();
                 }
@@ -45,27 +49,27 @@ public class Ninja : MonoBehaviour
                     _mover.StopAllMovement();
                 }
             }
-            else if (!_isAttacking)
+            else if (_isAttacking == false)
             {
-                _mover.StartPursue(_targetPosition);
+                _pursuer.StartPursue(_targetPosition);
             }
         }
-        else if (!_isAttacking)
+        else if (_isAttacking == false)
         {
-            _mover.StartPatrol();
+            _patroller.StartPatrol();
         }
     }
 
     private void OnEnable()
     {
-        _health.NinjaDied += Died;
-        _health.NinjaHurt += Hurt;
+        _health.Died += Died;
+        _health.Hurt += Hurt;
     }
 
     private void OnDisable()
     {
-        _health.NinjaDied -= Died;
-        _health.NinjaHurt -= Hurt;
+        _health.Died -= Died;
+        _health.Hurt -= Hurt;
     }
 
     private void Attack()
